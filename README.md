@@ -25,9 +25,14 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game's purpose is for fun. The user tries to guess a secret number that only the game knows. Every time the user guesses it right, they increase their score. Every time they guess wrong they decrease their score. They have a limited number of attempts that change based on difficulty.
+- The bugs I found:
+- Difficulty not properly changing number of attempts - changing difficulty from normal to hard decreased the number of attempts allowed
+- Guessing a number below the range told the under to guess lower - Guess of -1 in a range of 1 to 100 told me that the guess was too low.
+- New Game reset button was not resetting - Clicking new game would not reset the score or the history of guesses.
+  The fixes I applied:
+- Swapped "Too High" and "Too Low" labels, so that a guess that was too low actually resulted in a message of "Too Low"
+- On st.session_state reset, the history, score, attempts, and status were all reset on a New Game click. Attempts and Score were set to 0 in a New Game.
 
 ## 📸 Demo Walkthrough
 
